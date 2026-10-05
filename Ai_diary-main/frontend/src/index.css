@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    margin: 0;
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+    background-color: #201209;
+    color: #2c2016;
+    overflow-x: hidden;
+  }
+}
+
+/* Typography tokens matching reference */
+.font-serif-title {
+  font-family: "Playfair Display", "Newsreader", "Source Serif 4", Georgia, serif;
+}
+
+.font-handwriting {
+  font-family: "Caveat", "Kalam", cursive, sans-serif;
+}
+
+.font-book-brand {
+  font-family: "Cinzel", "Playfair Display", Georgia, serif;
+}
+
+/* Desk Background Surface with Real Wood Texture */
+.desk-surface {
+  background-color: #24140b;
+  background-image: 
+    radial-gradient(ellipse at 50% 30%, rgba(255, 235, 205, 0.09) 0%, rgba(15, 8, 4, 0.75) 100%),
+    url("/assets/wood_desk.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Outer Book Container with 3D Page Stack & Shadows */
+.book-outer-casing {
+  box-shadow: 
+    0 40px 90px -15px rgba(0, 0, 0, 0.95),
+    0 20px 40px -5px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(74, 40, 23, 0.6);
+}
+
+/* Realistic Leather Cover & Spine with Stitching */
+.leather-outer-frame {
+  background: 
+    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.05), transparent 60%),
+    linear-gradient(135deg, #2a160d 0%, #3d2113 35%, #24130a 70%, #170b05 100%);
+  border: 1px solid #4a2a19;
+}
+
+.leather-spine {
+  background: 
+    linear-gradient(to right, rgba(0,0,0,0.5) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.6) 100%),
+    linear-gradient(180deg, #2c160b 0%, #3a1e11 50%, #200f07 100%);
+  box-shadow: 
+    5px 0 25px rgba(0, 0, 0, 0.75),
+    inset -1px 0 3px rgba(255, 255, 255, 0.06);
+}
+
+.leather-stitch-border {
+  border: 1px dashed rgba(212, 175, 55, 0.4);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Journal Paper Spread with realistic Central Crease / Binding Gutter */
+.journal-spread-container {
+  background-color: #faf5eb;
+  position: relative;
+}
+
+/* Stacked Pages Edges Effect (simulates paper thickness on bottom and right) */
+.paper-stack-edge {
+  box-shadow: 
+    1px 1px 0 #ede0ca,
+    2px 2px 0 #ede0ca,
+    3px 3px 0 #dfd1b9,
+    4px 4px 0 #dfd1b9,
+    5px 5px 0 #cfbf9e,
+    6px 6px 0 #cfbf9e,
+    8px 12px 25px rgba(0, 0, 0, 0.45);
+}
+
+.journal-left-page {
+  background: 
+    linear-gradient(to right, #fcf9f2 0%, #faf6ee 85%, #f1e4ce 97%, #dfcfb2 100%);
+  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.journal-right-page {
+  background: 
+    linear-gradient(to right, #dfcfb2 0%, #f1e4ce 3%, #faf6ee 15%, #fcf9f2 100%);
+  box-shadow: inset -1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Central book binding gutter shadow */
+.book-gutter-crease {
+  box-shadow: 
+    inset 25px 0 25px -12px rgba(60, 35, 15, 0.25),
+    inset -25px 0 25px -12px rgba(60, 35, 15, 0.25);
+}
+
+/* Authentic Polaroid Photo Frame */
+.polaroid-frame {
+  background-color: #ffffff;
+  padding: 6px 6px 20px 6px;
+  box-shadow: 
+    0 6px 14px rgba(0, 0, 0, 0.16),
+    0 1px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.polaroid-frame:hover {
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+/* Sticky Note Shadow & Texture */
+.sticky-note {
+  background: linear-gradient(135deg, #fff9d7 0%, #fff2b2 100%);
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(225, 200, 120, 0.7);
+}
+
+/* Washi Tape Strip */
+.washi-tape {
+  background: rgba(245, 235, 215, 0.82);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(1.5px);
+}
+
+/* Custom Scrollbar for pages */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f4ecdc;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbb9a3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a99279;
+}

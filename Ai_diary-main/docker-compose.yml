@@ -1,0 +1,39 @@
+﻿services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://lifebook:lifebook_secret@postgres:5432/lifebook
+      - SECRET_KEY=lifebook-super-secret-jwt-key-for-hackathon-2026
+      - AI_PROVIDER=local
+      - STT_PROVIDER=local
+    depends_on:
+      - postgres
+    volumes:
+      - ./storage:/app/storage
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: lifebook
+      POSTGRES_PASSWORD: lifebook_secret
+      POSTGRES_DB: lifebook
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
